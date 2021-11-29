@@ -1,6 +1,6 @@
 CMakeFiles/CarVendor.dir/src/Vehicle.cpp.o: \
-  /Users/merric/Documents/Dev/CppND-Capstone/src/Vehicle.cpp \
-  /Users/merric/Documents/Dev/CppND-Capstone/src/Headers/Vehicle.h \
+  /Users/merric/Documents/GitHub/CppND-Capstone/src/Vehicle.cpp \
+  /Users/merric/Documents/GitHub/CppND-Capstone/src/Headers/Vehicle.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/string \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/pthread.h \

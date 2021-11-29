@@ -1,4 +1,4 @@
-# Install script for directory: /Users/merric/Documents/Dev/CppND-Capstone
+# Install script for directory: /Users/merric/Documents/GitHub/CppND-Capstone
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/merric/Documents/Dev/CppND-Capstone/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/merric/Documents/GitHub/CppND-Capstone/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

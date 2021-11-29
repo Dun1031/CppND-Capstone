@@ -1,5 +1,5 @@
 CMakeFiles/CarVendor.dir/src/main.cpp.o: \
-  /Users/merric/Documents/Dev/CppND-Capstone/src/main.cpp \
+  /Users/merric/Documents/GitHub/CppND-Capstone/src/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/pthread.h \
@@ -224,4 +224,4 @@ CMakeFiles/CarVendor.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/bitset \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__bit_reference \
-  /Users/merric/Documents/Dev/CppND-Capstone/src/Headers/UI.h
+  /Users/merric/Documents/GitHub/CppND-Capstone/src/Headers/UI.h

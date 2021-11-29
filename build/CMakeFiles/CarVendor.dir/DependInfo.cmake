@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/merric/Documents/Dev/CppND-Capstone/src/UI.cpp" "CMakeFiles/CarVendor.dir/src/UI.cpp.o" "gcc" "CMakeFiles/CarVendor.dir/src/UI.cpp.o.d"
-  "/Users/merric/Documents/Dev/CppND-Capstone/src/Vehicle.cpp" "CMakeFiles/CarVendor.dir/src/Vehicle.cpp.o" "gcc" "CMakeFiles/CarVendor.dir/src/Vehicle.cpp.o.d"
-  "/Users/merric/Documents/Dev/CppND-Capstone/src/main.cpp" "CMakeFiles/CarVendor.dir/src/main.cpp.o" "gcc" "CMakeFiles/CarVendor.dir/src/main.cpp.o.d"
+  "/Users/merric/Documents/GitHub/CppND-Capstone/src/UI.cpp" "CMakeFiles/CarVendor.dir/src/UI.cpp.o" "gcc" "CMakeFiles/CarVendor.dir/src/UI.cpp.o.d"
+  "/Users/merric/Documents/GitHub/CppND-Capstone/src/Vehicle.cpp" "CMakeFiles/CarVendor.dir/src/Vehicle.cpp.o" "gcc" "CMakeFiles/CarVendor.dir/src/Vehicle.cpp.o.d"
+  "/Users/merric/Documents/GitHub/CppND-Capstone/src/main.cpp" "CMakeFiles/CarVendor.dir/src/main.cpp.o" "gcc" "CMakeFiles/CarVendor.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links.
