@@ -3,13 +3,12 @@
 class Truck : public Vehicle
 {
 private:
-    /* data 
 public:
-    Truck(/* args );
+    Truck( );
     ~Truck();
 };
 
-Truck::Truck(/* args )
+Truck::Truck()
 {
 }
 

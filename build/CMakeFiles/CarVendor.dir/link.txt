@@ -1,1 +1,3 @@
-/Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/CarVendor.dir/src/UI.cpp.o CMakeFiles/CarVendor.dir/src/Vehicle.cpp.o CMakeFiles/CarVendor.dir/src/main.cpp.o -o CarVendor 
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\CarVendor.dir/objects.a
+C:\MinGW\bin\ar.exe qc CMakeFiles\CarVendor.dir/objects.a @CMakeFiles\CarVendor.dir\objects1.rsp
+C:\MinGW\bin\mingw32-g++.exe -g -Wl,--whole-archive CMakeFiles\CarVendor.dir/objects.a -Wl,--no-whole-archive -o CarVendor.exe -Wl,--out-implib,libCarVendor.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CarVendor.dir\linklibs.rsp

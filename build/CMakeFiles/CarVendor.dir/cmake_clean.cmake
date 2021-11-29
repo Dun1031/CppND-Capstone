@@ -1,12 +1,14 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CarVendor.dir/src/UI.cpp.o"
-  "CMakeFiles/CarVendor.dir/src/UI.cpp.o.d"
-  "CMakeFiles/CarVendor.dir/src/Vehicle.cpp.o"
-  "CMakeFiles/CarVendor.dir/src/Vehicle.cpp.o.d"
-  "CMakeFiles/CarVendor.dir/src/main.cpp.o"
-  "CMakeFiles/CarVendor.dir/src/main.cpp.o.d"
-  "CarVendor"
+  "CMakeFiles/CarVendor.dir/src/UI.cpp.obj"
+  "CMakeFiles/CarVendor.dir/src/UI.cpp.obj.d"
+  "CMakeFiles/CarVendor.dir/src/Vehicle.cpp.obj"
+  "CMakeFiles/CarVendor.dir/src/Vehicle.cpp.obj.d"
+  "CMakeFiles/CarVendor.dir/src/main.cpp.obj"
+  "CMakeFiles/CarVendor.dir/src/main.cpp.obj.d"
+  "CarVendor.exe"
+  "CarVendor.exe.manifest"
   "CarVendor.pdb"
+  "libCarVendor.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

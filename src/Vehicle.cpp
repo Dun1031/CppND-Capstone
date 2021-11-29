@@ -1,86 +1,41 @@
 #include "Headers/Vehicle.h"
 
 
-Vehicle::Vehicle(std::string model, float price, Status status, Color color, Trim trim)
+Vehicle::Vehicle(std::string model, int price, int status, int color, int trim)
 {
     generateID(); 
     _model = model;
     _price = price;
-    _status = status;
-    _color = color;
-    _trim = trim;
+    _status = (Status)status;
+    _color = (Color)color;
+    _trim = (Trim)trim;
 }
 
 Vehicle::~Vehicle()
 {
 }
 
-std::string Vehicle::getTrim()
+Trim Vehicle::getTrim()
 {
-    switch(_trim)
-    {
-        case touring:
-        return "Touring";
-        break;
-        case premium:
-        return "Premium";
-        break;
-        case limited:
-        return "Limited";
-        break;
-        default:
-        return "Base";
-    }
-
-    return "";
+    return _trim;
 }
 
-std::string Vehicle::getColor()
+Color Vehicle::getColor()
 {
-   switch(_color)
-    {
-        case black:
-        return "Black";
-        break;
-        case yellow:
-        return "Yellow";
-        break;
-        case blue:
-        return "Blue";
-        break;
-        default:
-        return "White";
-    }    
-
-    return "";
+    return _color;
 }
 
-std::string Vehicle::getStatus()
+Status Vehicle::getStatus()
 {
-   switch(_status)
-    {
-        case sold:
-        return "Sold";
-        break;
-        case inTransit:
-        return "In Transit";
-        break;
-        case withCustomer:
-        return "With Customer";
-        break;
-        default:
-        return "On Lot";
-    }    
-
-    return "";
+    return _status;
 }
 
-float Vehicle::getPrice()
+int Vehicle::getPrice()
 {
     return _price;
 }
 
-float Vehicle::getSellPrice()
+int Vehicle::getSellPrice()
 {
     return _sellPrice;
 }

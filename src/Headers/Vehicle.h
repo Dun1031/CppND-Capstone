@@ -1,26 +1,28 @@
+#ifndef VEHICLE
+#define VEHICLE
+
 #include <string>
 
-enum Status{onLot, sold, inTransit, withCustomer};
-enum Trim{base, premium, limited, touring};
-enum Color{black, white, blue, yellow};
+enum Status{onLot = 0, sold, inTransit, withCustomer};
+enum Trim{base = 0, premium, limited, touring};
+enum Color{black = 0, white, blue, yellow};
 
 class Vehicle
 {
 private:
     void generateID();
 
-    /* data */
     int _id;
-    float _price;
-    float _sellPrice;
+    int _price;
+    int _sellPrice;
     std::string _model;
     Status _status;
     Color _color;
     Trim _trim;
 
 public:
-    Vehicle(std::string model, float price, Status status, Color color, Trim trim);
-    Vehicle(int id, std::string model, float price, float sPrice, Status status, Color color, Trim trim) : _id(id), _model(model), _price(price), 
+    Vehicle(std::string model, int price, int status, int color, int trim);
+    Vehicle(int id, std::string model, int price, int sPrice, Status status, Color color, Trim trim) : _id(id), _model(model), _price(price), 
                                                                                                            _sellPrice(sPrice), _status(status), 
                                                                                                            _color(color), _trim(trim) {};
 
@@ -29,18 +31,19 @@ public:
     
     int getID();
 
-    float getPrice();
-    float getSellPrice();
+    int getPrice();
+    int getSellPrice();
     
-    std::string getTrim();
+    Trim getTrim();
     std::string getModel();   
-    std::string getColor();
-    std::string getStatus();
+    Color getColor();
+    Status getStatus();
 
     void setTrim(Trim t);
     void setColor(Color c);
     void setStatus(Status s);
-    void setPrice(float p);
-    void setSellPrice(float sp);                                                                                                        
+    void setPrice(int p);
+    void setSellPrice(int sp);                                                                                                        
 
 };
+#endif //END OF VEHICLE

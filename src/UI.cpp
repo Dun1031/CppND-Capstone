@@ -1,10 +1,11 @@
-#include <iostream>
 #include "Headers/UI.h"
-#include "Headers/Vehicle.h"
+#include "Headers/DataManager.h"
+
+static DataManager _dm;
 
 UI::UI()
 {
-
+    _dm = DataManager();
 }
 
 UI::~UI()
@@ -23,31 +24,50 @@ void UI::clear()
 #endif
 }
 
+std::istream& validateInput( std::istream& i, int& n )
+{
+  n = 0;
+
+  std::string s;
+
+  if (std::getline(i, s))
+  {
+    s.erase(s.find_last_not_of(" \f\n\r\t\v") + 1);
+
+    std::istringstream iss(s);
+
+    iss >> n;
+
+    if (!iss.eof())
+    {
+      i.setstate(std::ios::failbit);
+    }
+  }
+
+  return i;
+}
+
 void UI::mainMenu()
 {
     int choice;
 
+   // UI::clear();
+
+    _dm.loadInventory();
+    
     std::cout << "What would you liked to do?\n"
-              << "1) View Inventory\n"
-              << "2) Update Vheicle\n"  
-              << "3) Add Vehicle\n"
-              << "4) Quit\n"; 
-    std::cin >> choice;
+                << "1) View Inventory\n"
+                << "2) Update Vheicle\n"  
+                << "3) Add Vehicle\n"
+                << "4) Quit\n"; 
 
-    UI::handleInput(choice);
-}
-
-bool checkIfNumber(std::string input)
-{
-    for(int i = 0; i < input.length(); i++)
+    while(!validateInput(std::cin, choice))
     {
-        if(!std::isdigit(input[i]))
-        {
-            return false;
-        }        
+        std::cin.clear();
+        UI::mainMenu();
     }
 
-    return true;
+    UI::handleInput(choice);
 }
 
 std::string displayTrim(int t)
@@ -100,14 +120,115 @@ std::string displayColor(int c)
         return "Yellow";
         break;
         default:
-        return "Base";
+        return "Black";
     }
+}
+
+int selectColor()
+{
+    int c = 0;
+
+    while(!validateInput(std::cin, c) || c > 4 || c <= 0)
+    {
+        UI::clear();
+
+        std::cout << "Select Color:\n"
+        << "1) Black\n"
+        << "2) White\n"
+        << "3) Blue\n"
+        << "4) Yellow\n";
+
+        std::cin.clear();
+    }    
+
+    return c;
+}
+
+int selectTrim()
+{
+    int t = 0;
+
+    while(!validateInput(std::cin, t) || t > 4 || t <= 0)
+    {
+        UI::clear();
+
+        std::cout << "Select Trim:\n"
+                  << "1) Base\n"
+                  << "2) Premium\n"
+                  << "3) Limited\n"
+                  << "4) Touring\n";
+
+        std::cin.clear();
+    }
+
+    return t;
+}
+
+int selectStatus()
+{
+
+    int s = 0;
+
+    while(!validateInput(std::cin, s) || s > 4 || s <= 0)
+    {
+        UI::clear();
+
+        std::cout << "Select Status:\n"
+                  << "1) On Lot\n"
+                  << "2) Sold\n"
+                  << "3) In Transit\n"
+                  << "4) With Customer\n";
+
+        std::cin.clear();
+    }
+
+    return s;
+}
+
+int enterPrice()
+{
+    int p = 0;
+
+    while(!validateInput(std::cin, p) || p <= 0)
+    {
+        UI::clear();
+
+        std::cout << "Enter Price (Whole numbers only):";
+
+        std::cin.clear();
+    }
+
+    return p;
+}
+
+int selectConfirmation(std::string m, int p, int c, int t, int s)
+{
+    int o = 0;
+
+    while(!validateInput(std::cin, o) || o > 2 || o <=0)
+    {        
+        UI::clear();
+        
+        std::cout << "Here is what you selected: \n"
+                << m << ", "
+                << p << ", "
+                << displayColor(c) << ", "
+                << displayTrim(t) << ", "
+                << displayStatus(s) << "\n"
+                << "Is this correct?\n"
+                << "1) Yes\n"
+                << "2) No\n";
+        
+        std::cin.clear();
+    }
+
+    return o;
 }
 
 void UI::addVehicle()
 {
     std::string m;
-    float p = 0.0f;
+    int p = 0;
     int c = 0;
     int t = 0;
     int s = 0;
@@ -118,59 +239,52 @@ void UI::addVehicle()
     
     UI::clear();
 
-    std::cout << "Enter Price:";
-    std::cin >> p;
-         
-    while(c > 4 || c <= 0)
-    {
-        UI::clear();
+    std::cout << "Enter Price (Whole numbers only):";
+    p = enterPrice();
 
-        std::cout << "Select Color:\n"
-                    << "1) Black\n"
-                    << "2) White\n"
-                    << "3) Blue\n"
-                    << "4) Yellow\n";
+    UI::clear();
 
-        std::cin >> c;
-    }
- 
-    while(t > 4 || t <= 0 )
-    {        
-        UI::clear();
+    std::cout << "Select Color:\n"
+              << "1) Black\n"
+              << "2) White\n"
+              << "3) Blue\n"
+              << "4) Yellow\n";
 
-        std::cout << "Select Trim:\n"
-                  << "1) Base\n"
-                  << "2) Premium\n"
-                  << "3) Limited\n"
-                  << "4) Touring\n";
+    c = selectColor();
+    
+    UI::clear();
 
-        std::cin >> t;
-    }
+    std::cout << "Select Trim:\n"
+              << "1) Base\n"
+              << "2) Premium\n"
+              << "3) Limited\n"
+              << "4) Touring\n"; 
 
-    while(s > 4 || s <= 0 )
-    {
-        UI::clear();
+    t = selectTrim();
 
-        std::cout << "Select Status:\n"
-                  << "1) On Lot\n"
-                  << "2) Sold\n"
-                  << "3) In Transit\n"
-                  << "4) With Customer\n";
+    UI::clear();
 
-        std::cin >> s;
-    }
+    std::cout << "Select Status:\n"
+              << "1) On Lot\n"
+              << "2) Sold\n"
+              << "3) In Transit\n"
+              << "4) With Customer\n";
+
+    s = selectStatus();
+    
+    UI::clear();
 
     std::cout << "Here is what you selected: \n"
-              << m << ", "
-              << p << ", "
-              << displayColor(c) << ", "
-              << displayTrim(t) << ", "
-              << displayStatus(s) << "\n"
-              << "Is this correct?\n"
-              << "1) Yes\n"
-              << "2) No\n";
+            << m << ", "
+            << p << ", "
+            << displayColor(c) << ", "
+            << displayTrim(t) << ", "
+            << displayStatus(s) << "\n"
+            << "Is this correct?\n"
+            << "1) Yes\n"
+            << "2) No\n";
 
-    std::cin >> o;
+    o = selectConfirmation(m, p, c, t, s);
 
     if(o == 2)
     {
@@ -178,7 +292,15 @@ void UI::addVehicle()
         UI::addVehicle();
     }else
     {
+
+        auto v = std::shared_ptr<Vehicle>(new Vehicle(m, p, s, c, t));
+
+        _dm.addVehicles(std::move(v));
+
         UI::clear();
+
+        std::cout << Trim(t) << "\n";
+
         UI::mainMenu();
     }
 
@@ -191,7 +313,8 @@ void UI::handleInput(int choice)
     switch(choice)
     {
         case 1:
-        //break;
+        UI::viewInventory();
+        break;
         case 2:
         //break;
         case 3:
@@ -208,5 +331,21 @@ void UI::handleInput(int choice)
 
 void UI::viewInventory()
 {
+    auto v = _dm.getVehicles();
 
+    std::cout << "Inventory: \n";
+    
+    for(int i = 0; i < v.size(); i++)
+    {
+        std::cout << v[i]->getID() << ", " 
+                  << v[i]->getModel() << ", " 
+                  << displayColor(v[i]->getColor()) << ", "
+                  << displayTrim(v[i]->getTrim()) << ", "
+                  << v[i]->getPrice() << ", "                                            
+                  << displayStatus(v[i]->getStatus()) << "\n";
+    }
+
+    std::cout << "Press Enter to continue...\n";
+
+    std::cin.get();
 }

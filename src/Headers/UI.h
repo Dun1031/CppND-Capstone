@@ -1,7 +1,13 @@
+#include <iostream>
+#include <sstream>
+#include <memory>
+
+#include "Vehicle.h"
+
 class UI
 {
 private:
-    /* data */
+
 public:
     UI();
     ~UI();

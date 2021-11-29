@@ -1,0 +1,17 @@
+[
+{
+  "directory": "C:/Users/jsmith/Documents/GitHub/CppND-Capstone/build",
+  "command": "C:\\MinGW\\bin\\mingw32-g++.exe   -g   -std=c++17 -o CMakeFiles\\CarVendor.dir\\src\\UI.cpp.obj -c C:\\Users\\jsmith\\Documents\\GitHub\\CppND-Capstone\\src\\UI.cpp",
+  "file": "C:/Users/jsmith/Documents/GitHub/CppND-Capstone/src/UI.cpp"
+},
+{
+  "directory": "C:/Users/jsmith/Documents/GitHub/CppND-Capstone/build",
+  "command": "C:\\MinGW\\bin\\mingw32-g++.exe   -g   -std=c++17 -o CMakeFiles\\CarVendor.dir\\src\\Vehicle.cpp.obj -c C:\\Users\\jsmith\\Documents\\GitHub\\CppND-Capstone\\src\\Vehicle.cpp",
+  "file": "C:/Users/jsmith/Documents/GitHub/CppND-Capstone/src/Vehicle.cpp"
+},
+{
+  "directory": "C:/Users/jsmith/Documents/GitHub/CppND-Capstone/build",
+  "command": "C:\\MinGW\\bin\\mingw32-g++.exe   -g   -std=c++17 -o CMakeFiles\\CarVendor.dir\\src\\main.cpp.obj -c C:\\Users\\jsmith\\Documents\\GitHub\\CppND-Capstone\\src\\main.cpp",
+  "file": "C:/Users/jsmith/Documents/GitHub/CppND-Capstone/src/main.cpp"
+}
+]
